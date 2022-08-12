@@ -1,0 +1,27 @@
+<form [formGroup]="form">
+  <label for="pass">Contraseña: </label>
+  <input
+    type="password"
+    id="pass"
+    formControlName="password"
+    placeholder="Contraseña"
+  />
+
+  <br />
+
+  <label for="pass2">Confirmar contraseña: </label>
+  <input
+    matInput
+    type="password"
+    id="pass2"
+    formControlName="confirmarPassword"
+    placeholder="Confirmar Contraseña"
+  />
+
+  <div *ngIf="checarSiSonIguales()">
+    <p style="color: red;">Las contraseña no coinciden</p>
+  </div>
+  <br />
+
+  <button [disabled]="!form.valid">Enviar</button>
+</form>
